@@ -9,5 +9,6 @@ import tk.mybatis.mapper.common.Mapper;
  * @Time: 2020/10/11 7:58
  * @Description: com.changgou.dao
  */
+@Component
 public interface BrandMapper extends Mapper<Brand> {
 }
