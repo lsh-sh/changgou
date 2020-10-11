@@ -26,17 +26,21 @@ public class Result<T> implements Serializable {
     @ApiModelProperty(value = "逻辑数据", required = true)
     private T data;//返回数据
 
-    public Result(boolean flag, Integer code, String message, Object data) {
+    public Result(boolean flag, Integer code, String message, T data) {
         this.flag = flag;
         this.code = code;
         this.message = message;
-        this.data = (T) data;
+        this.data = data;
     }
 
     public Result(boolean flag, Integer code, String message) {
         this.flag = flag;
         this.code = code;
         this.message = message;
+    }
+
+    public Result(T data) {
+        this(true, StatusCode.OK, "操作成功!", data);
     }
 
     public Result() {
